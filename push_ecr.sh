@@ -6,8 +6,8 @@ if [ $# -lt 2 ] || [ $# -gt 2 ]; then
     exit 1
 fi
 
-ECR_REPO="$0"
-ECR_TAG="$1"
+ECR_REPO="$1"
+ECR_TAG="$2"
 AWS_ACCOUNT=`aws sts get-caller-identity --query 'Account' --output text`
 REGION=${AWS_DEFAULT_REGION:-${AWS_REGION:-"ap-northeast-1"}}
 
